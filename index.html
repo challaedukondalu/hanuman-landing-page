@@ -25,8 +25,15 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
-        body {
+        html, body {
             overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+        
+        body {
+            min-height: 100vh;
+            width: 100%;
         }
         
         .container {
@@ -34,6 +41,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            overflow-x: hidden;
         }
         
         .btn {
@@ -640,10 +648,100 @@
         @media (max-width: 768px) {
             .container {
                 padding: 0 15px;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .section {
+                padding: 40px 0;
+                width: 100%;
+            }
+
+            .hero {
+                margin-top: 80px;
+                height: auto;
+                padding: 60px 0;
+                width: 100%;
+            }
+
+            .hero-content {
+                padding: 0 15px;
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+                word-wrap: break-word;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                word-wrap: break-word;
+            }
+
+            .offers-slider-container {
+                width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+
+            .offer-card {
+                min-width: 250px;
+                width: 100%;
+                margin: 0 10px;
+            }
+
+            .product-container {
+                width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+
+            .product-card {
+                width: 100%;
+                margin: 0;
+            }
+
+            .features-grid {
+                width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+
+            .feature-card {
+                width: 100%;
+                margin: 0;
+            }
+
+            .about-content {
+                width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+
+            .contact-container {
+                width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+
+            .footer-container {
+                width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+
+            .map-container {
+                width: 100%;
+                margin: 20px 0 0 0;
+            }
+
+            .map-container iframe {
+                width: 100%;
+                height: 250px;
             }
 
             .mobile-toggle {
-                display: block;
                 position: absolute;
                 right: 15px;
                 top: 50%;
@@ -657,7 +755,7 @@
                 width: 100%;
                 background-color: var(--secondary);
                 flex-direction: column;
-                text-align: center;
+                 text-align: center;
                 transition: left 0.3s ease;
                 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
                 padding: 20px 0;
@@ -675,38 +773,34 @@
             }
 
             .header-container {
-                position: relative;
-                padding: 0 15px;
+                flex-direction: column;
+                align-items: center;
+                padding: 15px 0;
+                gap: 20px;
             }
 
             .logo {
                 margin-bottom: 0;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .logo h1 {
+                font-size: 1.8rem;
             }
 
             .language-switcher {
-                margin-left: 0;
-                margin-top: 0;
-                position: absolute;
-                right: 60px; /* Space for mobile toggle button */
-                top: 50%;
-                transform: translateY(-50%);
+                margin: 0;
+                position: static;
+                transform: none;
+                width: 100%;
+                justify-content: center;
+                gap: 15px;
+                padding-top: 5px;
             }
 
-            .hero {
-                margin-top: 80px; /* Ensure hero is below fixed header */
-                height: auto; /* Adjust height for content */
-                padding: 100px 0; /* Add padding */
-            }
-
-            .hero-content {
-                padding: 0 15px;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero p {
+            .lang-button {
+                padding: 8px 15px;
                 font-size: 1rem;
             }
 
@@ -715,120 +809,8 @@
                 gap: 15px;
             }
 
-            .section {
-                padding: 60px 0; /* Adjust section padding */
-            }
-
             .section-title h2 {
                 font-size: 2rem;
-            }
-
-            /* Adjustments for Offers Slider */
-            .slider-container {
-                padding: 0 15px; /* Adjust padding for smaller screens */
-            }
-
-            .slide-arrow {
-                width: 30px; /* Smaller arrows */
-                height: 30px;
-                font-size: 1rem; /* Smaller icon */
-            }
-
-            .slide-arrow.left {
-                left: -15px; /* Position arrows outside padding */
-            }
-
-            .slide-arrow.right {
-                right: -15px; /* Position arrows outside padding */
-            }
-
-            .offers-slider-container {
-                 gap: 20px; /* Slightly smaller gap */
-                 padding-bottom: 10px; /* Adjust padding */
-            }
-
-            .offer-card {
-                flex: 0 0 250px; /* Adjust card width for smaller screens */
-            }
-
-            /* Adjustments for Product Showcase Grid */
-            .product-container {
-                 grid-template-columns: 1fr; /* Changed to single column for mobile */
-                 gap: 20px; /* Adjust gap */
-            }
-
-            .product-card img {
-                 height: 220px; /* Adjusted image height for better visibility */
-                 padding: 1.2rem; /* Adjusted padding */
-            }
-
-            .product-card h3 {
-                font-size: 1.2rem; /* Adjust font size */
-                color: var(--secondary); /* Changed color to black for mobile */
-            }
-
-            .product-card p {
-                 font-size: 0.9rem; /* Adjust font size */
-                 color: var(--secondary); /* Changed color to black for mobile */
-            }
-
-            /* Adjustments for Why Choose Us Section */
-            .features-grid {
-                 gap: 20px; /* Adjust gap */
-            }
-
-            .feature-card {
-                 flex-direction: column; /* Stack icon and content */
-                 text-align: center;
-                 align-items: center;
-                 padding: 20px;
-            }
-
-            .feature-icon {
-                 margin-right: 0; /* Remove right margin */
-                 margin-bottom: 15px; /* Add bottom margin */
-            }
-
-            /* Adjustments for About Us Section */
-            .about-content {
-                 flex-direction: column; /* Stack image and text */
-                 gap: 30px;
-            }
-
-            .about-image {
-                min-width: unset; /* Remove min-width constraint */
-            }
-
-            /* Adjustments for Contact Section */
-            .contact-container {
-                 flex-direction: column; /* Stack info and form */
-                 gap: 30px;
-            }
-
-            .contact-info,
-            .contact-form {
-                 min-width: unset; /* Remove min-width constraint */
-            }
-
-            .info-item {
-                 flex-direction: column; /* Stack icon and content */
-                 text-align: center;
-                 align-items: center;
-            }
-
-            .info-icon {
-                 margin-right: 0; /* Remove right margin */
-                 margin-bottom: 10px; /* Add bottom margin */
-            }
-
-             .map-container {
-                 height: 250px; /* Adjust map height */
-             }
-
-            /* Adjustments for Footer */
-            .footer-container {
-                 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust footer columns */
-                 gap: 20px;
             }
 
             .floating-contact {
