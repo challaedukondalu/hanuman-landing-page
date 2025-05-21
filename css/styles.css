@@ -1,0 +1,809 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Navigation */
+.navbar {
+    background-color: #fff;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    display: block;
+}
+
+.logo h1 {
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+}
+
+/* Mobile Navigation */
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('jswpaints.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 1rem;
+    margin-top: 70px;
+}
+
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.5rem;
+}
+
+/* Products Section */
+.products-grid {
+    padding: 6rem 2rem;
+    background-color: #f8f9fa;
+}
+
+.products-grid h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 2.8rem;
+    color: #333;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.product-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    background-color: #e9ecef;
+    padding: 1.5rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.product-card h3 {
+    padding: 1.5rem 1.5rem 0.5rem;
+    font-size: 1.4rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.product-card p {
+    padding: 0 1.5rem 1.5rem;
+    color: #555;
+    font-size: 1rem;
+    flex-grow: 1;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+/* Floating Contact Button Styles */
+.floating-contact {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.float-btn {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.float-btn i {
+    color: var(--secondary);
+    font-size: 1.3rem;
+}
+
+.float-btn:hover,
+.float-btn.active {
+    transform: scale(1.05);
+    background-color: var(--primary-dark);
+}
+
+.float-options {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.float-options.active {
+    display: flex;
+}
+
+.float-option {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: var(--light);
+    border-radius: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: var(--secondary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+    white-space: nowrap;
+}
+
+.float-option:hover {
+    transform: translateX(-5px);
+}
+
+.float-option i {
+    margin-right: 6px;
+    color: var(--primary);
+    font-size: 1rem;
+}
+
+/* Responsive adjustments for floating contact */
+@media (max-width: 768px) {
+    .floating-contact {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .float-btn {
+        width: 45px;
+        height: 45px;
+    }
+
+    .float-btn i {
+        font-size: 1.2rem;
+    }
+
+    .float-options {
+        bottom: 55px;
+        right: 0;
+    }
+
+    .float-option {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+
+    .float-option i {
+        font-size: 0.9rem;
+    }
+
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+
+    #hero {
+        margin-top: 120px;
+    }
+
+    #hero h1 {
+        font-size: 2rem;
+    }
+
+    #hero p {
+        font-size: 1.2rem;
+    }
+
+    .products-grid {
+        padding: 2rem 1rem;
+    }
+
+    .product-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .header-container {
+        padding: 10px 15px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+
+    .logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-contact {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .float-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .float-btn i {
+        font-size: 1.1rem;
+    }
+
+    .float-options {
+        bottom: 50px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .product-card {
+        max-width: 100%;
+    }
+
+    .offer-card {
+        flex: 0 0 200px;
+    }
+
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Header and Navigation */
+    .header-container {
+        padding: 10px 15px;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: var(--secondary);
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu.active {
+        display: block;
+    }
+
+    .nav-menu li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: auto;
+        padding: 100px 20px;
+        margin-top: 70px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* What We Offer Section */
+    .offers-slider-container {
+        padding: 0 15px;
+    }
+
+    .offers-slider {
+        gap: 15px;
+        padding: 15px 0;
+    }
+
+    .offer-card {
+        flex: 0 0 280px;
+        padding: 20px;
+        min-height: 250px;
+        justify-content: center;
+    }
+
+    .offer-card i {
+        font-size: 2.2rem;
+        margin-bottom: 12px;
+    }
+
+    .offer-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+
+    .offer-card p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    /* Products Section */
+    .product-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .product-card {
+        margin: 0 auto;
+        max-width: 350px;
+    }
+
+    .product-card img {
+        height: 250px;
+    }
+
+    /* Why Choose Us Section */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .feature-card {
+        padding: 20px;
+    }
+
+    /* About Us Section */
+    .about-content {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    .about-image {
+        margin-bottom: 30px;
+    }
+
+    /* Contact Section */
+    .contact-container {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    .contact-info, 
+    .contact-form {
+        width: 100%;
+    }
+
+    .info-item {
+        margin-bottom: 20px;
+    }
+
+    /* Footer */
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 15px;
+    }
+
+    .footer-column {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    /* Language Switcher */
+    .language-switcher {
+        margin: 10px 0;
+    }
+
+    /* Section Titles */
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    /* Map Container */
+    .map-container {
+        height: 250px;
+        margin: 20px 15px;
+    }
+}
+
+/* Additional breakpoint for very small devices */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .product-card {
+        max-width: 100%;
+    }
+
+    .offer-card {
+        flex: 0 0 200px;
+    }
+
+    .float-btn {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Language Switcher */
+.language-switcher {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.lang-button {
+    background-color: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.lang-button:hover,
+.lang-button.active {
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+/* Mobile Navigation Styles */
+@media (max-width: 768px) {
+    .header-container {
+        padding: 10px 15px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+
+    .logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+
+    .mobile-toggle {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .nav-menu {
+        display: none;
+        position: fixed;
+        top: 70px;
+        right: 0;
+        width: 250px;
+        background-color: var(--secondary);
+        padding: 20px 0;
+        box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+        height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+
+    .nav-menu.active {
+        display: block;
+    }
+
+    .nav-menu li {
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-menu li a {
+        display: block;
+        padding: 15px 25px;
+        color: var(--light);
+        transition: background-color 0.3s ease;
+    }
+
+    .nav-menu li a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .language-switcher {
+        position: static;
+        margin-top: 5px;
+        padding: 5px;
+        justify-content: center;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .lang-button {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    /* Remove the body padding since language switcher is no longer fixed */
+    body {
+        padding-bottom: 0;
+    }
+
+    /* Adjust floating contact button back to original position */
+    .floating-contact {
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-menu {
+        width: 200px;
+    }
+
+    .nav-menu li a {
+        padding: 12px 20px;
+    }
+
+    .lang-button {
+        padding: 5px 10px;
+        font-size: 0.85rem;
+    }
+}
+
+/* What We Offer Section */
+.offers-slider-container {
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.offers-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.offers-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.offer-card {
+    flex: 0 0 300px;
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.offer-card:hover {
+    transform: translateY(-5px);
+}
+
+.offer-card i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.offer-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--secondary);
+}
+
+.offer-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Mobile Responsive Styles for What We Offer */
+@media (max-width: 768px) {
+    .offers-slider-container {
+        padding: 0 15px;
+    }
+
+    .offers-slider {
+        gap: 15px;
+        padding: 15px 0;
+    }
+
+    .offer-card {
+        flex: 0 0 280px;
+        padding: 20px;
+        min-height: 250px;
+        justify-content: center;
+    }
+
+    .offer-card i {
+        font-size: 2.2rem;
+        margin-bottom: 12px;
+    }
+
+    .offer-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+
+    .offer-card p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 480px) {
+    .offers-slider-container {
+        padding: 0 10px;
+    }
+
+    .offers-slider {
+        gap: 12px;
+        padding: 12px 0;
+    }
+
+    .offer-card {
+        flex: 0 0 260px;
+        padding: 15px;
+        min-height: 220px;
+    }
+
+    .offer-card i {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .offer-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+
+    .offer-card p {
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+} 
