@@ -130,9 +130,10 @@
             align-items: center;
         }
         
-        .logo img {
-            height: 40px;
-            margin-right: 10px;
+        .logo i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-right: 15px;
         }
         
         .logo h1 {
@@ -246,28 +247,27 @@
         
         .offer-card {
             background-color: var(--light);
-            padding: 25px;
+            padding: 30px;
             border-radius: 8px;
             text-align: center;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
-            flex: 0 0 280px;
+            flex: 0 0 300px; /* Set a fixed width for each card and prevent shrinking */
         }
         
         .offer-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
         }
         
         .offer-card i {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         
         .offer-card h3 {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             color: var(--secondary);
-            font-size: 1.2rem;
         }
         
         .offer-card p {
@@ -463,39 +463,49 @@
         }
         
         .contact-form {
+            flex: 1;
+            min-width: 300px;
             background-color: var(--light);
-            padding: 25px;
+            padding: 35px;
             border-radius: 8px;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         }
         
+        .contact-form h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         
         .form-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: 500;
             color: var(--secondary);
+            font-size: 1.1rem;
         }
         
         .form-control {
             width: 100%;
-            padding: 10px 15px;
+            padding: 12px 15px;
             border: 1px solid #ddd;
             border-radius: 4px;
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
         
         .form-control:focus {
             outline: none;
             border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.1);
         }
         
         textarea.form-control {
             resize: vertical;
-            min-height: 120px;
+            min-height: 150px;
         }
         
         /* Map */
@@ -702,8 +712,9 @@
                 margin-bottom: 0;
             }
 
-            .logo img {
-                height: 45px; /* Slightly larger logo */
+            .logo i {
+                font-size: 2rem;
+                margin-right: 10px;
             }
 
             .logo h1 {
@@ -878,6 +889,33 @@
             .float-option {
                 padding: 6px 12px;
                 font-size: 0.9rem;
+            }
+
+            .contact-form {
+                padding: 25px;
+            }
+            
+            .contact-form h3 {
+                font-size: 1.2rem;
+                margin-bottom: 15px;
+            }
+            
+            .form-group {
+                margin-bottom: 15px;
+            }
+            
+            .form-group label {
+                font-size: 1rem;
+                margin-bottom: 5px;
+            }
+            
+            .form-control {
+                padding: 10px 12px;
+                font-size: 0.95rem;
+            }
+            
+            textarea.form-control {
+                min-height: 120px;
             }
         }
         
@@ -1055,6 +1093,33 @@
                  margin-bottom: 10px;
              }
         }
+
+        /* Responsive adjustments for offer cards */
+        @media (max-width: 768px) {
+            .offer-card {
+                flex: 0 0 250px; /* Smaller width for mobile */
+                padding: 20px;
+            }
+            
+            .offer-card i {
+                font-size: 2.5rem;
+                margin-bottom: 15px;
+            }
+            
+            .offer-card h3 {
+                font-size: 1.1rem;
+                margin-bottom: 10px;
+            }
+            
+            .offer-card p {
+                font-size: 0.9rem;
+            }
+
+            .offers-slider-container {
+                gap: 15px; /* Reduced gap between cards on mobile */
+                padding-bottom: 15px;
+            }
+        }
     </style>
   </head>
 <body>
@@ -1063,7 +1128,7 @@
         <div class="container header-container">
             <div class="logo">
                 <a href="#home" class="logo-link">
-                    <img src="assets/logo.png" alt="Hanuman Traders Logo" width="50" height="50">
+                    <i class="fas fa-paint-roller"></i>
                     <h1 data-translate="site-title">Hanuman Traders</h1>
                 </a>
             </div>
@@ -1184,7 +1249,7 @@
                     <p data-translate="product-halo-advanced-description">Advanced interior wall paint with superior finish</p>
                 </div>
                 <div class="product-card hidden-product">
-                    <img src="assets/JSW Aura Emulsion.jpeg" alt="Aura Emulsion">
+                    <img src="assets/JSW Aura Emulsion.webp" alt="Aura Emulsion">
                     <h3 data-translate="product-aura-emulsion-heading">Aura Emulsion</h3>
                     <p data-translate="product-aura-emulsion-description">Premium wall emulsion for beautiful interiors</p>
                 </div>
